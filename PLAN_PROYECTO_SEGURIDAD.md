@@ -1,12 +1,12 @@
 # Plan de Proyecto — Análisis, Explotación y Mitigación de Vulnerabilidades
 
-**Curso:** Optativa · Periodo 2610  
+**Curso:** Optativa · 2026-II  
 **Repositorio base:** [Damn Vulnerable Restaurant API Game](https://github.com/theowni/Damn-Vulnerable-Restaurant-API-Game)  
-**OWASP cubierto:** API Security Top 10 (2023)
+**OWASP cubierto:** API Security Top 10 (2023) | OWASP Top 10 2021
 
 ---
 
-## Qué pide el profesor — checklist
+## Checklist
 
 | # | Actividad obligatoria | Responsable | Entregable |
 |---|---|---|---|
@@ -17,7 +17,6 @@
 | 5 | Validación — evidencia antes/después | Cada integrante la suya | `member-X/evidence/` |
 | + | Publicación obligatoria en GitHub con contexto, vulnerabilidades, OWASP, soluciones y reflexión ética | Todos | `README.md` del repo |
 
-> **Nota:** La sustentación vale el 62.5% de la nota. Cada integrante defiende solo su módulo.
 
 ---
 
@@ -36,8 +35,8 @@
 
 ```
 restaurant-api-security/
-├── README.md                        ← publicación principal (evaluada por el profe)
-├── vulnerable-app/                  ← clon del repo original (NO se modifica)
+├── README.md                        ← publicación principal
+├── vulnerable-app/                  ← clon del repo original
 ├── member-1-hashing/
 │   ├── README.md                    ← ficha técnica: descripción, OWASP, impacto, ética
 │   ├── evidence/
@@ -67,8 +66,6 @@ restaurant-api-security/
     ├── owasp-mapping.md             ← tabla de mapeo vulnerabilidad → OWASP → mitigación
     └── ethical-reflection.md        ← reflexión ética del equipo (requerida en la publicación)
 ```
-
-> **Regla de oro:** `vulnerable-app/` nunca se toca. Es la evidencia del "antes" para todo el equipo.
 
 ---
 
@@ -147,7 +144,6 @@ grep -r "login\|attempt\|limit\|throttle" vulnerable-app/ --include="*.py" -n
 grep -r "role\|admin\|permission\|authorize" vulnerable-app/ --include="*.py" -n
 ```
 
-> Anotar el archivo exacto y el número de línea. Tomar screenshot del código original.
 
 **Paso 7 — Explotar la vulnerabilidad y guardar evidencia**
 

@@ -1,6 +1,5 @@
 from datetime import datetime, timedelta, timezone
 from typing import Union
-
 from apis.auth.exceptions import UserAlreadyExistsException
 from config import Settings
 from db.models import User, UserRole
@@ -12,14 +11,11 @@ ALGORITHM = "HS256"
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
-
 def verify_password(plain_password, hashed_password):
     return pwd_context.verify(plain_password, hashed_password)
 
-
 def get_password_hash(password):
     return pwd_context.hash(password)
-
 
 def get_user_by_username(db, username: str) -> User:
     user = db.query(User).filter(User.username == username).first()

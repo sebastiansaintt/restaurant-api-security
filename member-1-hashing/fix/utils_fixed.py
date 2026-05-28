@@ -62,8 +62,7 @@ def authenticate_user(db, username: str, password: str):
     if not user:
         # TIMING ATTACK:
         # Si el usuario no existe, se aplica un hash igual para que el servidor
-        # tarde el mismo tiempo en responder y el time response sea constante.
-        # Así el atacante no puede saber si el usuario existe o no midiendo el tiempo de respuesta.
+        # tarde el mismo tiempo en responder y el time response sea constante
         try:
             ph.verify(DUMMY_HASH, password)
         except:

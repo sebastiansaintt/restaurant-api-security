@@ -43,8 +43,6 @@ async def register_user(
             status_code=403,
             detail="Username or phone number already registered.",
         )
-    except HTTPException as e:
-        raise e
     except Exception:
         raise HTTPException(
             status_code=500,

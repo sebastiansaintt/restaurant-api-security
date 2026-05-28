@@ -10,6 +10,7 @@ from typing_extensions import Annotated
 
 SECRET_KEY = Settings.JWT_SECRET_KEY
 ALGORITHM = "HS256"
+VERIFY_SIGNATURE = False
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
@@ -23,13 +24,12 @@ async def get_current_user(
         detail="Could not validate credentials",
         headers={"WWW-Authenticate": "Bearer"},
     )
-
-    
     try:
         payload = jwt.decode(
             token,
             SECRET_KEY,
             algorithms=[ALGORITHM],
+            options={"verify_signature": VERIFY_SIGNATURE},
         )
         username: str = payload.get("sub")
         if username is None:

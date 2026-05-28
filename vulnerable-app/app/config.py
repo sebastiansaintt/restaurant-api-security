@@ -26,7 +26,7 @@ def generate_random_secret():
 
 
 class Settings:
-    JJWT_SECRET_KEY = "clave_super_segura_2026"
+    JWT_SECRET_KEY = os.getenv("JWT_SECRET_KEY", generate_random_secret())
     CHEF_USERNAME = os.getenv("CHEF_USERNAME", "chef")
 
     # someone needs to remember to set this variable to True in env variables
